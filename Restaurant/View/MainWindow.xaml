@@ -4,9 +4,66 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Restaurant"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Birria los Diaz"
+        MinHeight="600" MinWidth="1080"  WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="170"/>
+            <ColumnDefinition Width="1.5*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Background="#ff363636">
+            <Grid Height="150" Background="Gray"/>
+            <ListView Foreground="White">
+                <ListViewItem Selected="Select_Box">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="DesktopClassic" VerticalAlignment="Center" Margin="15 12"/>
+                        <TextBlock Text="Caja" VerticalAlignment="Center" Margin="5" FontWeight="Bold"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem Selected="Select_Supplier">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Contacts" VerticalAlignment="Center" Margin="15 12"/>
+                        <TextBlock Text="Proveedores" VerticalAlignment="Center" Margin="5" FontWeight="Bold"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem Selected="Select_User" >
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Users" VerticalAlignment="Center" Margin="15 12"/>
+                        <TextBlock Text="Usuarios" VerticalAlignment="Center" Margin="5" FontWeight="Bold"/>
+                    </StackPanel>
+                </ListViewItem> 
+                <ListViewItem Selected="Select_Product" >
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Nutrition" VerticalAlignment="Center" Margin="15 12"/>
+                        <TextBlock Text="Productos" VerticalAlignment="Center" Margin="5" FontWeight="Bold"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem>
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Sale" VerticalAlignment="Center" Margin="15 12"/>
+                        <TextBlock Text="Ventas" VerticalAlignment="Center" Margin="5" FontWeight="Bold"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem>
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="RoomService" VerticalAlignment="Center" Margin="15 12"/>
+                        <TextBlock Text="Ordenes" VerticalAlignment="Center" Margin="5" FontWeight="Bold"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem>
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Table" VerticalAlignment="Center" Margin="15 15"/>
+                        <TextBlock Text="Mesas" VerticalAlignment="Center" Margin="5" FontWeight="Bold"/>
+                    </StackPanel>
+                </ListViewItem>
+            </ListView>
+        </StackPanel>   
+        <Grid Grid.Column="1">
+            <StackPanel>
+                <Frame x:Name="Main" NavigationUIVisibility="Hidden"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>

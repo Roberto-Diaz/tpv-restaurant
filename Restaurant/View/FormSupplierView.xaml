@@ -1,0 +1,82 @@
+﻿<Page x:Class="Restaurant.View.FormSupplierView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Restaurant.View"
+      xmlns:vr="clr-namespace:Restaurant.Validation"                    
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="490" d:DesignWidth="1080"
+      Title="FormSupplierView">
+
+    <Grid Background="white">
+        <StackPanel>
+            <GroupBox materialDesign:ColorZoneAssist.Mode="PrimaryDark">
+                <GroupBox.Header>
+                    <Label Foreground="White" FontSize="20" FontFamily="Aharoni">Registrar Proveedores</Label>
+                </GroupBox.Header>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="{Binding Supplier.FirstSurname, StringFormat=Welcome {0}}"/>   
+                    <TextBox x:Name="txtName" MaxWidth="400"  Margin="15" MinWidth="200" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Nombre">
+                        <TextBox.Text>
+                            <Binding Path="Supplier.Name" Mode="TwoWay"  ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+                                    <vr:ValueIsNotNull ValidatesOnTargetUpdated="False"/>
+                                    <vr:MinCharactersRule MinimumCharacters="3"/>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
+                    <!--<TextBox MaxWidth="400" x:Name="txtName" Margin="15" MinWidth="200" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Nombre" Text="{Binding Supplier.Name, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"/>-->
+                    <TextBox  MaxWidth="400" x:Name="txtFirstSurname" Margin="15"  MinWidth="200" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Apellido paterno">
+                        <TextBox.Text>
+                            <Binding Path="Supplier.FirstSurname" Mode="TwoWay"  ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+                                    <vr:ValueIsNotNull ValidatesOnTargetUpdated="False"/>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
+                    <TextBox  MaxWidth="400" x:Name="txtSecondSurname" Margin="15"  MinWidth="200" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Apellido materno">
+                        <TextBox.Text>
+                            <Binding Path="Supplier.SecondSurname">
+                                <Binding.ValidationRules>   
+                                    <vr:ValueIsNotNull ValidatesOnTargetUpdated="False"/>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
+                    <TextBox  MaxWidth="400" x:Name="txtPhone" Margin="15"  MinWidth="200" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Telefono">
+                        <TextBox.Text>
+                            <Binding Path="Supplier.SecondSurname">
+                                <Binding.ValidationRules>
+                                    <vr:ValueIsNotNull ValidatesOnTargetUpdated="False"/>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
+                    <TextBox  MaxWidth="400" x:Name="txtAddress" Margin="15"  MinWidth="200" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Domicilio">
+                        <TextBox.Text>
+                            <Binding Path="Supplier.Address">
+                                <Binding.ValidationRules>
+                                    <vr:ValueIsNotNull ValidatesOnTargetUpdated="False"/>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text> 
+                    </TextBox>
+                    <StackPanel>
+                        <Button Style="{StaticResource MaterialDesignFloatingActionAccentButton}" Content="Guardar" Command="{Binding SaveCommandSupplier}">    
+                            <Button.CommandParameter>
+                                <MultiBinding Converter="{StaticResource cv}">
+                                    <Binding ElementName="txtName" Path="Text"/>
+                                    <Binding ElementName="txtFirstSurname" Path="Text"/>
+                                </MultiBinding>
+                            </Button.CommandParameter>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</Page>

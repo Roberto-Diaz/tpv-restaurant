@@ -10,7 +10,6 @@ C:\Users\HOME\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant\bin\De
 C:\Users\HOME\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\HOME\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant\bin\Debug\MaterialDesignThemes.Wpf.pdb
 C:\Users\HOME\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant\bin\Debug\MaterialDesignThemes.Wpf.xml
-C:\Users\HOME\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant\obj\Debug\Restaurant.csprojResolveAssemblyReference.cache
 C:\Users\HOME\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant\obj\Debug\View\MainWindow.g.cs
 C:\Users\HOME\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant\obj\Debug\App.g.cs
 C:\Users\HOME\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant\obj\Debug\Restaurant_Content.g.cs
@@ -22,3 +21,11 @@ C:\Users\HOME\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant\obj\De
 C:\Users\HOME\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant\obj\Debug\Restaurant.csproj.GenerateResource.Cache
 C:\Users\HOME\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant\obj\Debug\Restaurant.exe
 C:\Users\HOME\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant\obj\Debug\Restaurant.pdb
+C:\Users\HOME\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\HOME\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant\obj\Debug\App.baml
+C:\Users\HOME\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant\obj\Debug\View\FormSupplierView.g.cs
+C:\Users\HOME\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant\obj\Debug\View\FormSupplierView.baml
+C:\Users\HOME\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant\obj\Debug\View\SupplierView.g.cs
+C:\Users\HOME\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant\obj\Debug\View\SupplierView.baml
+C:\Users\HOME\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant\obj\Debug\View\LoginView.g.cs
+C:\Users\HOME\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant\obj\Debug\View\LoginView.baml

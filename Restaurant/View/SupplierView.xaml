@@ -1,0 +1,42 @@
+﻿<Page x:Class="Restaurant.View.SupplierView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Restaurant.View"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="490" d:DesignWidth="1080"
+      Title="SupplierView">     
+
+    <Grid Background="white">
+        <StackPanel>
+            <GroupBox materialDesign:ColorZoneAssist.Mode="PrimaryDark">
+                <GroupBox.Header>
+                    <Grid>
+                        <Label HorizontalAlignment="Left" Foreground="White" FontSize="20" FontFamily="Aharoni">Listado de proveedores</Label>
+                        <Button HorizontalAlignment="Right" Click="Btn_AddSupplier" >Agregar</Button>
+                    </Grid>
+                </GroupBox.Header>
+                <DataGrid x:Name="dgSuppliers" AutoGenerateColumns="False" IsReadOnly="True">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Nombre" Binding="{Binding FullName}"/>
+                        <DataGridTextColumn Header="Telefono" Binding="{Binding Phone}"/>
+                        <DataGridTextColumn Header="Dirección" Binding="{Binding Address}"/>
+                        <DataGridTextColumn Header="Fecha de registro" Binding="{Binding CreatedAt}"/>
+                        <DataGridTemplateColumn Header="Funciones">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid MinWidth="120">
+                                        <!--<Button  HorizontalAlignment="Left"  Command="{Binding Id}" Click="Btn_EliminarSupplier" Style="{StaticResource MaterialDesignFloatingActionAccentButton}">Eliminar</Button>
+                                        <Button  HorizontalAlignment="Right" Command="{Binding Id}" Click="Btn_EditarSupplier" Style="{StaticResource MaterialDesignFloatingActionAccentButton}">Editar</Button>-->
+                                    </Grid>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</Page>

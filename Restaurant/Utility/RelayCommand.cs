@@ -9,8 +9,7 @@ namespace Restaurant.Utility
 {
     public class RelayCommand: ICommand
     {   
-        private Action methodToExecute;
-        private Func<bool> canExecuteEvaluator;
+        private Action methodToExecute;         
         readonly Predicate<Object> _canExecute;
 
         public RelayCommand(Action methodToExecute, Predicate<Object> canExecute)

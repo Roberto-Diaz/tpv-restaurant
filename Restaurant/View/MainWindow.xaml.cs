@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Restaurant.DB;
+using Restaurant.Model;
+using Restaurant.View;
+using Restaurant.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +24,51 @@ namespace Restaurant
     /// </summary>
     public partial class MainWindow : Window
     {
+        MainViewModel _main = new MainViewModel();
+        public static Frame StaticMainFrame;
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = _main;
+            StaticMainFrame = Main;
+            //Refresh();
+        }
+        private void Refresh()
+        {
+            List<UserModel> lst = new List<UserModel>();
+
+            using (RestaurantTPVEntities db = new RestaurantTPVEntities())
+            {
+                lst = (from d in db.Users
+                       select new UserModel
+                       {
+                           Name = d.Name,
+                           UserName = d.UserName,
+                           Password = d.Password
+                       }).ToList();
+            }
+                
+            //datagrid.itemssource = lst;   
+        }
+
+        private void Select_Supplier(object sender, RoutedEventArgs e)
+        {
+            StaticMainFrame.Content = new SupplierView();       
+        }
+
+        private void Select_Box(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Select_User(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Select_Product(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
