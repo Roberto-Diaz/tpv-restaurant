@@ -1,1 +1,2 @@
 C:\Users\HOME\Documents\Visual Studio 2015\Projects\restauranttpv\Restaurant\Restaurant\bin\Debug\Restaurant.exe.config
+C:\Users\HOME\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant\bin\Debug\Restaurant.exe.config
