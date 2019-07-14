@@ -2,8 +2,38 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Restaurant"
-             StartupUri="MainWindow.xaml">
+             xmlns:converter="clr-namespace:Restaurant.Utility"         
+             StartupUri="View/MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Grey.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Red.xaml" />
+
+                <ResourceDictionary>
+                    <ControlTemplate x:Key="errorTemplate">
+                        <Border BorderBrush="OrangeRed" BorderThickness="2">
+                            <Grid>
+                                <AdornedElementPlaceholder/>
+                                <TextBlock Text="{Binding [0].ErrorContent}" Foreground="OrangeRed"
+                                           VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,4,0"/>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </ResourceDictionary>
+                <ResourceDictionary>
+                    <converter:ValueConverter x:Key="cv"></converter:ValueConverter>
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+        <!--<SolidColorBrush x:Key="PrimaryHueLightBrush" Color="{StaticResource Primary100}"/>
+        <SolidColorBrush x:Key="PrimaryHueLightForegroundBrush" Color="{StaticResource Primary100}"/>
+        <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="{StaticResource Primary500}"/>
+        <SolidColorBrush x:Key="PrimaryHueMidForegroundBrush" Color="{StaticResource Primary500}"/>
+        <SolidColorBrush x:Key="PrimaryHueDarkBrush" Color="{StaticResource Primary700}"/>
+        <SolidColorBrush x:Key="PrimaryHueDarkForegroundBrush" Color="{StaticResource Primary700}"/>-->
     </Application.Resources>
 </Application>
