@@ -17,23 +17,22 @@
                     <Label Foreground="White" FontSize="20" FontFamily="Aharoni">Registrar Proveedores</Label>
                 </GroupBox.Header>
                 <StackPanel Orientation="Vertical">
-                    <TextBlock Text="{Binding Supplier.FirstSurname, StringFormat=Welcome {0}}"/>   
+                    <TextBlock Text="{Binding Supplier.FirstSurname, StringFormat=Welcome {0}}"/>         
                     <TextBox x:Name="txtName" MaxWidth="400"  Margin="15" MinWidth="200" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Nombre">
                         <TextBox.Text>
-                            <Binding Path="Supplier.Name" Mode="TwoWay"  ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
+                            <Binding Path="Supplier.Name" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
-                                    <vr:ValueIsNotNull ValidatesOnTargetUpdated="False"/>
-                                    <vr:MinCharactersRule MinimumCharacters="3"/>
-                                </Binding.ValidationRules>
+                                    <DataErrorValidationRule ValidatesOnTargetUpdated="False"/>                
+                                </Binding.ValidationRules>      
                             </Binding>
                         </TextBox.Text>
                     </TextBox>
                     <!--<TextBox MaxWidth="400" x:Name="txtName" Margin="15" MinWidth="200" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Nombre" Text="{Binding Supplier.Name, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"/>-->
                     <TextBox  MaxWidth="400" x:Name="txtFirstSurname" Margin="15"  MinWidth="200" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Apellido paterno">
                         <TextBox.Text>
-                            <Binding Path="Supplier.FirstSurname" Mode="TwoWay"  ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
-                                <Binding.ValidationRules>
-                                    <vr:ValueIsNotNull ValidatesOnTargetUpdated="False"/>
+                            <Binding Path="Supplier.FirstSurname" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>                   
+                                    <DataErrorValidationRule ValidatesOnTargetUpdated="False"/>  
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox.Text>
@@ -49,7 +48,7 @@
                     </TextBox>
                     <TextBox  MaxWidth="400" x:Name="txtPhone" Margin="15"  MinWidth="200" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Telefono">
                         <TextBox.Text>
-                            <Binding Path="Supplier.SecondSurname">
+                            <Binding Path="Supplier.Phone">     
                                 <Binding.ValidationRules>
                                     <vr:ValueIsNotNull ValidatesOnTargetUpdated="False"/>
                                 </Binding.ValidationRules>
@@ -63,18 +62,21 @@
                                     <vr:ValueIsNotNull ValidatesOnTargetUpdated="False"/>
                                 </Binding.ValidationRules>
                             </Binding>
-                        </TextBox.Text> 
+                        </TextBox.Text>
                     </TextBox>
-                    <StackPanel>
-                        <Button Style="{StaticResource MaterialDesignFloatingActionAccentButton}" Content="Guardar" Command="{Binding SaveCommandSupplier}">    
-                            <Button.CommandParameter>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button x:Name="btnSaveSupplier" Click="Btn_SaveSupplier" MinHeight="60" MinWidth="50">                                
+                                <materialDesign:PackIcon Kind="ContentSave" HorizontalAlignment="Left" Height="48" Width="48"/>
+                        </Button>       
+                    </StackPanel>
+                    <!--<Button Style="{StaticResource MaterialDesignFloatingActionAccentButton}" Content="Guardar" Command="{Binding SaveCommandSupplier}">    
+                            <Button.CommandParameter>   
                                 <MultiBinding Converter="{StaticResource cv}">
                                     <Binding ElementName="txtName" Path="Text"/>
                                     <Binding ElementName="txtFirstSurname" Path="Text"/>
-                                </MultiBinding>
+                                </MultiBinding> 
                             </Button.CommandParameter>
-                        </Button>
-                    </StackPanel>
+                        </Button>-->
                 </StackPanel>
             </GroupBox>
         </StackPanel>

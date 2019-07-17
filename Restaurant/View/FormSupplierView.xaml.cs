@@ -1,6 +1,8 @@
-﻿using Restaurant.ViewModel;
+﻿using Restaurant.Model;
+using Restaurant.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,11 +23,43 @@ namespace Restaurant.View
     /// </summary>
     public partial class FormSupplierView : Page
     {
+        public SupplierViewModel context = new SupplierViewModel();
         public FormSupplierView()
         {
-            SupplierViewModel context = new SupplierViewModel();               
             InitializeComponent();          
-            DataContext = context;                  
-        }       
+            DataContext = context;
+            btnSaveSupplier.IsEnabled = false;      
+            context.Supplier.PropertyChanged += new PropertyChangedEventHandler(Supplier_PropertyChanged);  
+        }
+
+        private void Supplier_PropertyChanged(object sender, PropertyChangedEventArgs e)
+
+        {          
+            btnSaveSupplier.IsEnabled = context.Supplier.IsValid();     
+
+        }   
+
+        private void Btn_SaveSupplier(object sender, RoutedEventArgs e)
+        {
+            if (btnSaveSupplier.IsEnabled)
+            {
+                MessageBox.Show("puedo guardar");   
+            }
+            DateTime createdAt = DateTime.Now;
+            var oSupplier = new SupplierModel();
+            oSupplier.Name = txtName.Text;
+            oSupplier.FirstSurname = txtFirstSurname.Text;
+            oSupplier.SecondSurname = txtSecondSurname.Text;
+            oSupplier.Phone = txtPhone.Text;
+            oSupplier.Address = txtAddress.Text;
+            oSupplier.CreatedAt = createdAt;
+            if (SupplierViewModel.SaveSupplier(oSupplier))
+            {
+                MessageBox.Show("Proveedor registrado exitosamente");
+                MainWindow.StaticMainFrame.Content = new SupplierView();
+            }
+            else
+                MessageBox.Show("No se pudo registrar, intentelo de nuevo");
+        }
     }
 }

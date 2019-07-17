@@ -1,5 +1,7 @@
-﻿using Restaurant.Model;
+﻿using Restaurant.DB;
+using Restaurant.Model;
 using Restaurant.Utility;
+using Restaurant.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,9 +22,9 @@ namespace Restaurant.ViewModel
             SaveCommandSupplier = new RelayCommand(SaveSupplierExecute, SaveSupplierCanExecute);
         }
 
-        public void SaveSupplierExecute()
+        public void SaveSupplierExecute(object parameter)
         {
-            MessageBox.Show("Proveedor guardado");
+            MessageBox.Show("ok");                           
         }   
         public bool SaveSupplierCanExecute(object parameter)
         {
@@ -32,6 +34,22 @@ namespace Restaurant.ViewModel
                 return false;
             else
                 return true;
+        }                   
+
+        public static bool SaveSupplier(SupplierModel model)
+        {
+            using (var db = new RestaurantTPVEntities())
+            {
+                var oSupplier = new Suppliers();
+                oSupplier.Name = model.Name;
+                oSupplier.FirstSurname = model.FirstSurname;
+                oSupplier.SecondSurname = model.SecondSurname;
+                oSupplier.Phone = model.Phone;
+                oSupplier.Address = model.Address;
+                oSupplier.CreatedAt = model.CreatedAt;
+                db.Suppliers.Add(oSupplier);
+                return db.SaveChanges() > 0;
+            }
         }
     }
 }
