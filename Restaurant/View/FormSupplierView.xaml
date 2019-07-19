@@ -1,15 +1,13 @@
-﻿<Page x:Class="Restaurant.View.FormSupplierView"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Restaurant.View"
-      xmlns:vr="clr-namespace:Restaurant.Validation"                    
-      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-      mc:Ignorable="d" 
-      d:DesignHeight="490" d:DesignWidth="1080"
-      Title="FormSupplierView">
-
+﻿<Window x:Class="Restaurant.View.FormSupplierView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Restaurant.View"
+        xmlns:vr="clr-namespace:Restaurant.Validation"                    
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="FormSupplierView" Height="300" Width="300">
     <Grid Background="white">
         <StackPanel>
             <GroupBox materialDesign:ColorZoneAssist.Mode="PrimaryDark">
@@ -17,13 +15,13 @@
                     <Label Foreground="White" FontSize="20" FontFamily="Aharoni">Registrar Proveedores</Label>
                 </GroupBox.Header>
                 <StackPanel Orientation="Vertical">
-                    <TextBlock Text="{Binding Supplier.FirstSurname, StringFormat=Welcome {0}}"/>         
+                    <TextBlock Text="{Binding Supplier.FirstSurname, StringFormat=Welcome {0}}"/>
                     <TextBox x:Name="txtName" MaxWidth="400"  Margin="15" MinWidth="200" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Nombre">
                         <TextBox.Text>
                             <Binding Path="Supplier.Name" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
-                                    <DataErrorValidationRule ValidatesOnTargetUpdated="False"/>                
-                                </Binding.ValidationRules>      
+                                    <DataErrorValidationRule ValidatesOnTargetUpdated="False"/>
+                                </Binding.ValidationRules>
                             </Binding>
                         </TextBox.Text>
                     </TextBox>
@@ -31,8 +29,8 @@
                     <TextBox  MaxWidth="400" x:Name="txtFirstSurname" Margin="15"  MinWidth="200" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Apellido paterno">
                         <TextBox.Text>
                             <Binding Path="Supplier.FirstSurname" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
-                                <Binding.ValidationRules>                   
-                                    <DataErrorValidationRule ValidatesOnTargetUpdated="False"/>  
+                                <Binding.ValidationRules>
+                                    <DataErrorValidationRule ValidatesOnTargetUpdated="False"/>
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox.Text>
@@ -40,7 +38,7 @@
                     <TextBox  MaxWidth="400" x:Name="txtSecondSurname" Margin="15"  MinWidth="200" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Apellido materno">
                         <TextBox.Text>
                             <Binding Path="Supplier.SecondSurname">
-                                <Binding.ValidationRules>   
+                                <Binding.ValidationRules>
                                     <vr:ValueIsNotNull ValidatesOnTargetUpdated="False"/>
                                 </Binding.ValidationRules>
                             </Binding>
@@ -48,7 +46,7 @@
                     </TextBox>
                     <TextBox  MaxWidth="400" x:Name="txtPhone" Margin="15"  MinWidth="200" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Telefono">
                         <TextBox.Text>
-                            <Binding Path="Supplier.Phone">     
+                            <Binding Path="Supplier.Phone">
                                 <Binding.ValidationRules>
                                     <vr:ValueIsNotNull ValidatesOnTargetUpdated="False"/>
                                 </Binding.ValidationRules>
@@ -65,10 +63,13 @@
                         </TextBox.Text>
                     </TextBox>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <Button x:Name="btnSaveSupplier" Click="Btn_SaveSupplier" MinHeight="60" MinWidth="50">                                
-                                <materialDesign:PackIcon Kind="ContentSave" HorizontalAlignment="Left" Height="48" Width="48"/>
-                        </Button>       
-                    </StackPanel>
+                        <Button x:Name="btnSaveSupplier" Click="Btn_SaveSupplier" MinHeight="78" MinWidth="50">
+                            <StackPanel>
+                                <materialDesign:PackIcon Kind="ContentSave" HorizontalAlignment="Center" Height="48" Width="48"/>
+                                <Label Content="Guardar"/>
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>       
                     <!--<Button Style="{StaticResource MaterialDesignFloatingActionAccentButton}" Content="Guardar" Command="{Binding SaveCommandSupplier}">    
                             <Button.CommandParameter>   
                                 <MultiBinding Converter="{StaticResource cv}">
@@ -81,4 +82,4 @@
             </GroupBox>
         </StackPanel>
     </Grid>
-</Page>
+</Window>
