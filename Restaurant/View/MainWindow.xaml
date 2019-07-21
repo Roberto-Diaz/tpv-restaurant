@@ -10,18 +10,18 @@
         MinHeight="600" MinWidth="1080"  WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="170"/>
+            <ColumnDefinition Width="170"/> 
             <ColumnDefinition Width="1.5*"/>
         </Grid.ColumnDefinitions>
         <StackPanel Background="#ff363636">
             <Grid Height="150" Background="Gray"/>
             <ListView Foreground="White">
-                <ListViewItem Selected="Select_Box">
+                <!--<ListViewItem Selected="Select_Box">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="DesktopClassic" VerticalAlignment="Center" Margin="15 12"/>
                         <TextBlock Text="Caja" VerticalAlignment="Center" Margin="5" FontWeight="Bold"/>
                     </StackPanel>
-                </ListViewItem>
+                </ListViewItem>-->  
                 <ListViewItem Selected="Select_Supplier">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="Contacts" VerticalAlignment="Center" Margin="15 12"/>
@@ -60,9 +60,12 @@
                 </ListViewItem>
             </ListView>
         </StackPanel>   
-        <Grid Grid.Column="1">
+        <Grid Grid.Column="1">  
             <StackPanel>
-                <Frame x:Name="Main" NavigationUIVisibility="Hidden"/>
+                <TextBlock x:Name="bienvenido"></TextBlock>                     
+            </StackPanel>
+            <StackPanel>    
+                <Frame x:Name="Main" Source="WelcomeView.xaml" NavigationUIVisibility="Hidden"/>
             </StackPanel>
         </Grid>
     </Grid>

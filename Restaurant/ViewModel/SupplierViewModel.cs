@@ -19,7 +19,7 @@ namespace Restaurant.ViewModel
         public SupplierViewModel()  
         {       
             Supplier = new SupplierModel();             
-            SaveCommandSupplier = new RelayCommand(SaveSupplierExecute, SaveSupplierCanExecute);
+            //SaveCommandSupplier = new RelayCommand(SaveSupplierExecute, SaveSupplierCanExecute);
         }
 
         public void SaveSupplierExecute(object parameter)

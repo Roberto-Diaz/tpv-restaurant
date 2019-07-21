@@ -1,0 +1,44 @@
+﻿<Page x:Class="Restaurant.View.WelcomeView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Restaurant.View"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="490" d:DesignWidth="1080"
+      Title="WelcomeView">
+
+    <Grid Background="White">
+        <StackPanel>
+            <GroupBox materialDesign:ColorZoneAssist.Mode="PrimaryDark">
+                <GroupBox.Header>
+                    <Grid>
+                        <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                            <Label Foreground="White" FontSize="20" FontFamily="Aharoni">Bienvenido</Label>
+                            <Label x:Name="welcome" Foreground="White"  FontSize="20" FontFamily="Aharoni"></Label> 
+                        </StackPanel>               
+                        <!--<Button HorizontalAlignment="Right" Click="Btn_AddSupplier" >Agregar</Button>-->    
+                    </Grid>
+                </GroupBox.Header>
+                <StackPanel>
+                    <TextBlock TextAlignment="Center" FontSize="100">Logo</TextBlock>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button x:Name="btnOpenAccount" Click="Btn_OpenAccount" MinHeight="78" MinWidth="50"  Margin="15">
+                            <StackPanel>
+                                <materialDesign:PackIcon Kind="DesktopClassic" HorizontalAlignment="Center" Height="48" Width="48"/>
+                                <Label Content="Abrir caja"/>   
+                            </StackPanel>
+                        </Button>
+                        <Button x:Name="btnCloseAccount" MinHeight="78" MinWidth="50"  Margin="15">     
+                            <StackPanel>
+                                <materialDesign:PackIcon Kind="DesktopClassic" HorizontalAlignment="Center" Height="48" Width="48"/>
+                                <Label Content="Salir"/>    
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</Page>

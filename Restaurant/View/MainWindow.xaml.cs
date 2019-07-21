@@ -29,12 +29,13 @@ namespace Restaurant
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = _main;
-            StaticMainFrame = Main;
+            DataContext = _main;    
+            StaticMainFrame = Main;                   
             //Refresh();
         }
         private void Refresh()
-        {
+        {   
+          
             List<UserModel> lst = new List<UserModel>();
 
             using (RestaurantTPVEntities db = new RestaurantTPVEntities())
@@ -56,10 +57,10 @@ namespace Restaurant
             StaticMainFrame.Content = new SupplierView();       
         }
 
-        private void Select_Box(object sender, RoutedEventArgs e)
-        {
-
-        }
+        //private void Select_Box(object sender, RoutedEventArgs e)
+        //{
+        //    StaticMainFrame.Content = new BoxView();    
+        //} 
 
         private void Select_User(object sender, RoutedEventArgs e)
         {

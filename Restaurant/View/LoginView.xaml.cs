@@ -20,21 +20,30 @@ namespace Restaurant.View
     /// </summary>
     public partial class LoginView : Window
     {
+        private int bandera = 0;
+        public static string usuario;
+        public static int UserId;
         public LoginView()
         {
             InitializeComponent();
+            usuario = "";       
         }
 
-        private int bandera = 0;
+        
         private void BtnIniciar(object sender, RoutedEventArgs e)
         {
+
             using (RestaurantTPVEntities db = new RestaurantTPVEntities())
             {
                 var user = (from d in db.Users
                             where d.UserName == txtUserName.Text && d.Password == txtPassword.Password
                             select d).FirstOrDefault();
                 if (user != null)
-                    bandera = 1;
+                {
+                    usuario = user.Name+" "+user.FirstSurname+" "+user.SecondSurname;
+                    UserId = user.Id;                  
+                    bandera = 1;    
+                }
                 else
                     MessageBox.Show("Datos invalidos");
             }
@@ -47,7 +56,7 @@ namespace Restaurant.View
                 //view.Show();          
                 MainWindow main = new MainWindow();
                 main.Show();
-                Close();
+                Close();        
             }
         }
 

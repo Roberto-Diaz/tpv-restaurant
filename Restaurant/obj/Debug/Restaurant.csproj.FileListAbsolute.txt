@@ -30,5 +30,7 @@ C:\Users\HOME\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant\obj\De
 C:\Users\HOME\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant\obj\Debug\View\LoginView.g.cs
 C:\Users\HOME\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant\obj\Debug\View\LoginView.baml
 C:\Users\HOME\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant\obj\Debug\Restaurant.csprojResolveAssemblyReference.cache
-C:\Users\HOME\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant\obj\Debug\View\BoxView.g.cs
-C:\Users\HOME\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant\obj\Debug\View\BoxView.baml
+C:\Users\HOME\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant\obj\Debug\View\AccountView.g.cs
+C:\Users\HOME\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant\obj\Debug\View\AccountView.baml
+C:\Users\HOME\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant\obj\Debug\View\WelcomeView.g.cs
+C:\Users\HOME\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant\obj\Debug\View\WelcomeView.baml

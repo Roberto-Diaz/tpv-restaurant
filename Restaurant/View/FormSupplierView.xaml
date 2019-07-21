@@ -7,9 +7,9 @@
         xmlns:vr="clr-namespace:Restaurant.Validation"                    
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="FormSupplierView" Height="300" Width="300">
+        Title="Proveedores" Height="525" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">     
     <Grid Background="white">
-        <StackPanel>
+        <StackPanel>        
             <GroupBox materialDesign:ColorZoneAssist.Mode="PrimaryDark">
                 <GroupBox.Header>
                     <Label Foreground="White" FontSize="20" FontFamily="Aharoni">Registrar Proveedores</Label>
@@ -63,7 +63,13 @@
                         </TextBox.Text>
                     </TextBox>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <Button x:Name="btnSaveSupplier" Click="Btn_SaveSupplier" MinHeight="78" MinWidth="50">
+                        <Button x:Name="btnCancel" Click="Btn_Cancel" MinHeight="78" MinWidth="50" Margin="15">
+                            <StackPanel>
+                                <materialDesign:PackIcon Kind="Cancel" HorizontalAlignment="Center" Height="48" Width="48"/>
+                                <Label Content="Cancelar"/> 
+                            </StackPanel>
+                        </Button>   
+                        <Button x:Name="btnSaveSupplier" Click="Btn_SaveSupplier" MinHeight="78" MinWidth="50"  Margin="15">
                             <StackPanel>
                                 <materialDesign:PackIcon Kind="ContentSave" HorizontalAlignment="Center" Height="48" Width="48"/>
                                 <Label Content="Guardar"/>
@@ -79,7 +85,7 @@
                             </Button.CommandParameter>
                         </Button>-->
                 </StackPanel>
-            </GroupBox>
+            </GroupBox> 
         </StackPanel>
     </Grid>
 </Window>

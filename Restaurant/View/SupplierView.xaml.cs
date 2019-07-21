@@ -56,9 +56,9 @@ namespace Restaurant.View
         private void Btn_AddSupplier(object sender, RoutedEventArgs e)
         {
             //MainWindow.StaticMainFrame.Content = new FormSupplierView();        
-            FormSupplierView _form = new FormSupplierView();
+            FormSupplierView _form = new FormSupplierView();            
             _form.Show();   
-            
+                    
         }
     }
 }

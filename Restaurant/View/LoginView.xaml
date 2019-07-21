@@ -31,11 +31,26 @@
                     <StackPanel Margin="25">
                         <TextBox x:Name="txtUserName" Foreground="Brown" Margin="15" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Usuario" Text="{Binding User.UserName, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"/>
                         <PasswordBox x:Name="txtPassword" Foreground="Brown" Margin="15" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" materialDesign:HintAssist.Hint="Constraseña" PasswordChar="{Binding User.Password, Mode=OneWayToSource}"/>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <!--<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                             <Button Margin="15 50" Content="Cancelar"/>
                             <Button Margin="15 50" Content="Iniciar" Click="BtnIniciar"/>
+                        </StackPanel>-->
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Button MinHeight="78" MinWidth="50"  Margin="15">
+                                <StackPanel>
+                                    <materialDesign:PackIcon Kind="Cancel" HorizontalAlignment="Center" Height="48" Width="48"/>
+                                    <Label Content="Cancelar"/>
+                                </StackPanel>
+                            </Button>   
+                            <Button MinHeight="78" MinWidth="50"  Margin="15" Click="BtnIniciar">
+                                <StackPanel>    
+                                    <materialDesign:PackIcon Kind="Login" HorizontalAlignment="Center" Height="48" Width="48"/>
+                                    <Label Content="Entrar"/>
+                                </StackPanel>
+                            </Button>
                         </StackPanel>
                     </StackPanel>
+                    
                 </Border>
             </StackPanel>
         </materialDesign:ColorZone>

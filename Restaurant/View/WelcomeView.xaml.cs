@@ -16,13 +16,20 @@ using System.Windows.Shapes;
 namespace Restaurant.View
 {
     /// <summary>
-    /// Lógica de interacción para BoxView.xaml
+    /// Lógica de interacción para WelcomeView.xaml
     /// </summary>
-    public partial class BoxView : Page
+    public partial class WelcomeView : Page
     {
-        public BoxView()
+        public WelcomeView()
         {
             InitializeComponent();
+            welcome.Content = LoginView.usuario;    
+        }
+
+        private void Btn_OpenAccount(object sender, RoutedEventArgs e)
+        {
+            AccountView _Account = new AccountView();
+            _Account.Show();    
         }
     }
 }
