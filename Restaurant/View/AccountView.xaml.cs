@@ -23,7 +23,7 @@ namespace Restaurant.View
     {
         public AccountView()
         {
-            InitializeComponent();
+            InitializeComponent();          
             CargarBox();    
         }
 
@@ -41,7 +41,7 @@ namespace Restaurant.View
                 oAccount.Quantity = decimal.Parse(txtQuantity.Text);
                 if (SaveAccount(oAccount))
                 {
-                    MessageBox.Show("Cuenta registrada correctamente");
+                    MessageBox.Show("Cuenta registrada correctamente");                         
                     this.Close();
                 }
                 else

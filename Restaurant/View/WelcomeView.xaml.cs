@@ -19,10 +19,11 @@ namespace Restaurant.View
     /// Lógica de interacción para WelcomeView.xaml
     /// </summary>
     public partial class WelcomeView : Page
-    {
+    {                   
         public WelcomeView()
         {
             InitializeComponent();
+            btnOpenAccount.IsEnabled = true;
             welcome.Content = LoginView.usuario;    
         }
 

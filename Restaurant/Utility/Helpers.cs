@@ -97,7 +97,7 @@ namespace Restaurant.Utility
                 if (Enum.IsDefined(typeof(CountryCodes), countryCodeType))
                     countryCode = countryCodeType.ToString();
             }
-            catch (Exception ex)
+            catch (Exception)   
             {
                 return countryCode;
             }

@@ -32,7 +32,7 @@ namespace Restaurant
             DataContext = _main;    
             StaticMainFrame = Main;                   
             //Refresh();
-        }
+        }   
         private void Refresh()
         {   
           
@@ -48,28 +48,14 @@ namespace Restaurant
                            Password = d.Password
                        }).ToList();
             }
-                
+
             //datagrid.itemssource = lst;   
+            //StaticMainFrame.Content = new SupplierView();
         }
 
-        private void Select_Supplier(object sender, RoutedEventArgs e)
+        private void Selected_DinnerRoom(object sender, RoutedEventArgs e)
         {
-            StaticMainFrame.Content = new SupplierView();       
-        }
-
-        //private void Select_Box(object sender, RoutedEventArgs e)
-        //{
-        //    StaticMainFrame.Content = new BoxView();    
-        //} 
-
-        private void Select_User(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Select_Product(object sender, RoutedEventArgs e)
-        {
-
+            StaticMainFrame.Content = new DinnerRoomView();     
         }
     }
 }

@@ -75,11 +75,17 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\AccountModel.cs" />
+    <Compile Include="Model\AreasModel.cs" />
+    <Compile Include="Model\TableModel.cs" />
     <Compile Include="Utility\Helpers.cs" />
+    <Compile Include="ViewModel\DinnerRoomViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\SupplierViewModel.cs" />
     <Compile Include="View\AccountView.xaml.cs">
       <DependentUpon>AccountView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DinnerRoomView.xaml.cs">
+      <DependentUpon>DinnerRoomView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\FormSupplierView.xaml.cs">
       <DependentUpon>FormSupplierView.xaml</DependentUpon>
@@ -94,6 +100,10 @@
       <DependentUpon>WelcomeView.xaml</DependentUpon>
     </Compile>
     <Page Include="View\AccountView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DinnerRoomView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
