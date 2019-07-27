@@ -1,32 +1,31 @@
-﻿<Window x:Class="Restaurant.View.AccountView"
+﻿<Window x:Class="Restaurant.View.FormOrderView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:Restaurant.View"
-        mc:Ignorable="d"
-        Title="AccountView" Height="328" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">   
-    <Grid Background="White">
-        <StackPanel>
+        xmlns:vr="clr-namespace:Restaurant.Validation"                      
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"    
+        Title="FormOrderView" Height="525" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid>
+        <StackPanel Background="AntiqueWhite">                  
             <GroupBox materialDesign:ColorZoneAssist.Mode="PrimaryDark" BorderThickness="0">
-                <GroupBox.Header>   
-                    <Label Foreground="White" FontSize="20" FontFamily="Aharoni">Registrar cuenta</Label>
-                </GroupBox.Header>  
-                <StackPanel Orientation="Vertical"> 
-                    <TextBlock x:Name="txtName"></TextBlock>
-                    <ComboBox x:Name="txtBox" MaxWidth="400"  Margin="15" MinWidth="200" Style="{StaticResource MaterialDesignFloatingHintComboBox}" materialDesign:HintAssist.Hint="Caja">   
-                        
-                    </ComboBox> 
-                    <TextBox x:Name="txtQuantity" MaxWidth="400"  Margin="15" MinWidth="200" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Cantidad">
+                <GroupBox.Header>
+                    <Label Foreground="White" FontSize="20" FontFamily="Aharoni">Registrar Orden</Label>
+                </GroupBox.Header>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock x:Name="Mesa"/>      
+                    <TextBlock x:Name="User"/>      
+                    <!--<TextBox x:Name="txtName" MaxWidth="400"  Margin="15" MinWidth="200" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Nombre">
                         <TextBox.Text>
-                            <Binding Path="Account.Quantity" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
+                            <Binding Path="Supplier.Name" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
                                     <DataErrorValidationRule ValidatesOnTargetUpdated="False"/>
                                 </Binding.ValidationRules>
-                            </Binding>  
+                            </Binding>
                         </TextBox.Text>
-                    </TextBox>
+                    </TextBox>-->
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <Button x:Name="btnCancel" Click="Btn_Cancel" MinHeight="78" MinWidth="50" Margin="15">
                             <StackPanel>
@@ -34,7 +33,7 @@
                                 <Label Content="Cancelar"/>
                             </StackPanel>
                         </Button>
-                        <Button x:Name="btnSaveAccount" Click="Btn_SaveAccount" MinHeight="78" MinWidth="50"  Margin="15">
+                        <Button x:Name="btnSaveSupplier"  MinHeight="78" MinWidth="50"  Margin="15">
                             <StackPanel>
                                 <materialDesign:PackIcon Kind="ContentSave" HorizontalAlignment="Center" Height="48" Width="48"/>
                                 <Label Content="Guardar"/>
@@ -43,6 +42,6 @@
                     </StackPanel>
                 </StackPanel>
             </GroupBox>
-        </StackPanel>
+        </StackPanel>   
     </Grid>
 </Window>

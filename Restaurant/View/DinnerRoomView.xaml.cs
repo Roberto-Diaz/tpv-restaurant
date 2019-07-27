@@ -34,5 +34,16 @@ namespace Restaurant.View
             int id = int.Parse(((Button)e.Source).Uid); 
             MessageBox.Show(""+ id);             
         }
+
+        private void Btn_OpenTable(object sender, RoutedEventArgs e)
+        {
+            string nombre = ((Button)e.Source).Content.ToString();
+            int id = int.Parse(((Button)e.Source).Uid);     
+
+            FormOrderView _formOrder = new FormOrderView();
+            _formOrder.Mesa.Text = id.ToString();
+            _formOrder.User.Text = LoginView.usuario;           
+            _formOrder.Show();  
+        }
     }
 }

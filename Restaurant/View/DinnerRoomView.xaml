@@ -10,22 +10,102 @@
       Title="DinnerRoomView">
 
     <Grid Background="White">
+        <!--<Border  Height="150" Width="175" CornerRadius="10" Margin="5" VerticalAlignment="Top"  
+                          BorderBrush="Green" BorderThickness="2" Background="LightGreen">
+            <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Left">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Disponible"  Margin="10"/>
+                    <TextBlock Text="true"  Margin="10"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Sillas" Margin="10"/>
+                    <TextBlock Text="5" Margin="10"/>
+                </StackPanel>
+                <Button Uid="{Binding Id}" Width="150" Height="50" Content="mesa 1" Margin="10"/>
+            </StackPanel>
+        </Border>-->
+
+
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1.5*"/>
             <ColumnDefinition Width="180"/>
-        </Grid.ColumnDefinitions>   
-        <StackPanel Grid.Column="0">
-            <Label Content="Mesas" HorizontalAlignment="Center" FontSize="30"/> 
+        </Grid.ColumnDefinitions>
+
+    
+        <ScrollViewer Grid.Column="0">
+            <StackPanel>    
+                <Label Content="Mesas" HorizontalAlignment="Center" FontSize="30"/>
+                <StackPanel Margin="25 0">  
+                    <ItemsControl x:Name="ListViewTables" ItemsSource="{Binding lstTables}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>  
+                                <Border Margin="10" Width="110" Height="180">
+                                    <StackPanel>        
+                                        <Border  Width="100" Height="90" CornerRadius="5">
+                                            <Border.Effect>
+                                                <DropShadowEffect ShadowDepth="1"/>
+                                            </Border.Effect>
+                                            <Border.Background>
+                                                <ImageBrush ImageSource="/Assets/mesa.jpg" />
+                                            </Border.Background>        
+                                        </Border>                                               
+                                        <TextBlock  Text="{Binding Name}" Foreground="{Binding StatusColor}" Margin="5" FontSize="17" FontFamily="Franklin Gothic Medium"/>
+                                        <TextBlock Text="{Binding Chairs,  StringFormat=Sillas: {0}}" Margin="5 0" FontSize="15"/>
+                                        <Button Uid="{Binding Id}" Margin="5 0" Click="Btn_OpenTable" >                           
+                                            <StackPanel Orientation="Horizontal">
+                                                <materialDesign:PackIcon Kind="OpenInApp" HorizontalAlignment="Left" Margin="2"/>
+                                                <TextBlock HorizontalAlignment="Right" Text="Abrir" Margin="2"/>        
+                                            </StackPanel>       
+                                        </Button>
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer> 
+
+        <!--<StackPanel Grid.Column="0">    
+            <Label Content="Mesas" HorizontalAlignment="Center" FontSize="30"/>
             <ItemsControl ItemsSource="{Binding lstTables}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left">
-                            <Button Uid="{Binding Id}" Width="150" Height="50" Content="{Binding Name}" Margin="10"/>
-                        </StackPanel>
-                    </DataTemplate>
+                        <Border  Height="150" Width="175" CornerRadius="10" Margin="5" VerticalAlignment="Top"  
+                              BorderBrush="Green" BorderThickness="2" Background="LightGreen" Grid.Column="0" HorizontalAlignment="Left">
+                                <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Left">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Disponible" Margin="10"/>  
+                                        <TextBlock Text="{Binding Status}" Margin="10"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Sillas" Margin="10"/>
+                                        <TextBlock Text="{Binding Chairs}" Grid.Column="0" Margin="10"/>
+                                    </StackPanel>
+                                    <Button Uid="{Binding Id}" Width="150" Height="50" Content="{Binding Name}" Margin="10"/>
+                                </StackPanel>
+                            </Border>                                                
+                    </DataTemplate>     
                 </ItemsControl.ItemTemplate>
-            </ItemsControl>
-        </StackPanel>
+            </ItemsControl> 
+        </StackPanel>-->
+
+        <!--<ListView ItemsSource="{Binding lstTables}" Grid.Column="0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Status}" Header="Estado" Width="150"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Chairs}" Header="Sillas" Width="150"/>   
+                </GridView>
+            </ListView.View>
+        </ListView>-->
+
 
         <StackPanel Grid.Column="1">
             <Label Content="Areas" HorizontalAlignment="Center" FontSize="30"/>

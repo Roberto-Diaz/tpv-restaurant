@@ -10,27 +10,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Restaurant.View
 {
     /// <summary>
-    /// Lógica de interacción para WelcomeView.xaml
+    /// Lógica de interacción para FormOrderView.xaml
     /// </summary>
-    public partial class WelcomeView : Page
-    {                   
-        public WelcomeView()
+    public partial class FormOrderView : Window
+    {
+        public FormOrderView()
         {
             InitializeComponent();
-            btnOpenAccount.IsEnabled = true;
-            welcome.Content = LoginView.usuario;             
         }
 
-        private void Btn_OpenAccount(object sender, RoutedEventArgs e)
+        private void Btn_Cancel(object sender, RoutedEventArgs e)
         {
-            AccountView _Account = new AccountView();
-            _Account.Show();    
+            this.Close();   
         }
     }
 }

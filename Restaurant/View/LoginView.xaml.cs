@@ -25,7 +25,7 @@ namespace Restaurant.View
         public static int UserId;
         public LoginView()
         {
-            InitializeComponent();
+            InitializeComponent();  
             usuario = "";       
         }
 
@@ -54,8 +54,10 @@ namespace Restaurant.View
                 //var viewModel = new ViewModel.UserViewModel { };
                 //var view = new MainWindow { DataContext = viewModel };
                 //view.Show();          
-                MainWindow main = new MainWindow();
-                main.Show();
+                MainWindow _main = new MainWindow();
+                //_main.bienvenido.Text = usuario;          
+                        
+                _main.Show();
                 Close();        
             }
         }

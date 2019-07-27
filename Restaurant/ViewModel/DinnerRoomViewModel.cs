@@ -12,7 +12,7 @@ namespace Restaurant.ViewModel
     {
         public AreasModel Area { get; private set; }
         public List<AreasModel> lstAreas { get; private set; }
-        public List<TableModel> lstTables { get; private set; }
+        public List<TableModel> lstTables { get; private set; }        
             
         public DinnerRoomViewModel()
         {
@@ -42,17 +42,19 @@ namespace Restaurant.ViewModel
 
         private List<TableModel> GetTables()  
         {           
-            List<TableModel> lst = new List<TableModel>();
+            List<TableModel> lst = new List<TableModel>();  
             using (var db = new RestaurantTPVEntities())
-            {   
+            {
                 lst = db.Tables.Select(x => new TableModel
                 {
                     Id = x.Id,
                     Area = x.AreasId,
-                    Status = x.Status,
+                    Status = x.Status,      
                     Name = x.Name,
-                    Chairs = x.Chairs,
-                    CreatedAt = x.CreatedAt
+                    Chairs = x.Chairs,                 
+                    StatusMenssage = x.Status == true ? "Disponible" : "Ocupada",     
+                    StatusColor = x.Status == true ? "Green" : "Red",       
+                    CreatedAt = x.CreatedAt 
                 }).ToList();        
             }      
             return lst;

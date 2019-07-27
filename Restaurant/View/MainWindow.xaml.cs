@@ -56,6 +56,11 @@ namespace Restaurant
         private void Selected_DinnerRoom(object sender, RoutedEventArgs e)
         {
             StaticMainFrame.Content = new DinnerRoomView();     
+        }   
+
+        private void Selected_Admin(object sender, RoutedEventArgs e)
+        {
+            StaticMainFrame.Content = new SupplierView();   
         }
     }
 }

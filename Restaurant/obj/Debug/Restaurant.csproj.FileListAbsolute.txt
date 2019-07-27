@@ -36,3 +36,5 @@ C:\Users\HOME\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant\obj\De
 C:\Users\HOME\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant\obj\Debug\View\DinnerRoomView.g.cs
 C:\Users\HOME\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant\obj\Debug\View\DinnerRoomView.baml
 C:\Users\HOME\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant\obj\Debug\Restaurant.csprojResolveAssemblyReference.cache
+C:\Users\HOME\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant\obj\Debug\View\FormOrderView.g.cs
+C:\Users\HOME\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant\obj\Debug\View\FormOrderView.baml

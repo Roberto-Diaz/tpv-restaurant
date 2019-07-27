@@ -87,6 +87,9 @@
     <Compile Include="View\DinnerRoomView.xaml.cs">
       <DependentUpon>DinnerRoomView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\FormOrderView.xaml.cs">
+      <DependentUpon>FormOrderView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\FormSupplierView.xaml.cs">
       <DependentUpon>FormSupplierView.xaml</DependentUpon>
     </Compile>
@@ -104,6 +107,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\DinnerRoomView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\FormOrderView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -259,6 +266,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Resource Include="Assets\mesa.jpg" />
     <Content Include="DB\DB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DB.edmx</DependentUpon>

@@ -16,7 +16,7 @@ namespace Restaurant.Model
             get { return model.Id; }
             set
             {
-                if (model.Id == value) return;
+                if (model.Id == value) return;  
                 model.Id = value;
                 OnPropertyChanged("Id");
             }

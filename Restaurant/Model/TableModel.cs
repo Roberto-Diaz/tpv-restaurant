@@ -45,12 +45,50 @@ namespace Restaurant.Model
 
         public bool Status
         {
-            get { return model.Status; }
+            get { return model.Status; }    
             set
             {
                 if (model.Status == value) return;
                 model.Status = value;
                 OnPropertyChanged("Status");
+            }
+        }
+
+        private string _StatusMenssage;
+        public string StatusMenssage
+        {
+            get
+            {
+                if (model.Status == true)
+                    return "Disponible";    
+                else
+                    return "Ocupada";
+                    
+            }   
+            set
+            {               
+                if (_StatusMenssage == value) return;
+                _StatusMenssage = value; 
+                OnPropertyChanged("StatusMenssage");
+            }       
+        }
+
+        private string _StatusColor;
+        public string StatusColor
+        {
+            get
+            {
+                if (model.Status == true)
+                    return "Green";
+                else
+                    return "Red";
+
+            }
+            set         
+            {
+                if (_StatusColor == value) return;
+                _StatusColor = value;
+                OnPropertyChanged("StatusColor");
             }
         }
 
