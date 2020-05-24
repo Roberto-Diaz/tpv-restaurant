@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\HOME\Documents\Visual Studio 2015\Projects\Restaurant\Restaurant\App.xaml
-8-66943986
+10-1820616497
 2-1593083472
-51-449555567
+621306370551
 20-1282752156
-View\AccountView.xaml;View\DinnerRoomView.xaml;View\FormOrderView.xaml;View\FormSupplierView.xaml;View\LoginView.xaml;View\MainWindow.xaml;View\SupplierView.xaml;View\WelcomeView.xaml;
+View\AccountView.xaml;View\DinnerRoomView.xaml;View\FormOrderView.xaml;View\FormSupplierView.xaml;View\LoginView.xaml;View\MainWindow.xaml;View\OrderDetailView.xaml;View\OrderView.xaml;View\SupplierView.xaml;View\WelcomeView.xaml;
 
 False
 

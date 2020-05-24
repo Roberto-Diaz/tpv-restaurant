@@ -5,63 +5,67 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Restaurant"
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        mc:Ignorable="d"
-        Title="Birria los Diaz"
-        MinHeight="605" MinWidth="1080" Height="600" Width="1080" WindowStartupLocation="CenterScreen">        
-    <Grid>
+        mc:Ignorable="d"    
+        Title="Birria los Diaz" 
+        MinHeight="600" MinWidth="1080" WindowStartupLocation="CenterScreen">
+    <!--Height="750" MinHeight="600"  MaxHeight="750" MinWidth="800" Width="1080" MaxWidth="1080" WindowStartupLocation="CenterScreen">-->  
+    <Grid>                                              
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="180"/> 
-            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition Width="200"/> 
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0">  
-            <materialDesign:ColorZone Mode="PrimaryMid">
-                <Grid Height="150"> 
-                    <TextBlock Margin="50" FontSize="30" TextAlignment="Center" Text="Logo"></TextBlock>
-                </Grid>                     
-            </materialDesign:ColorZone>
-            <materialDesign:ColorZone Mode="PrimaryDark" Height="1020">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>  
+            <RowDefinition/>    
+        </Grid.RowDefinitions>  
+
+        <Grid Grid.Column="0" Grid.Row="0" Height="150" Background="{StaticResource PrimaryHueMidBrush}">
+            <TextBlock Margin="45" FontSize="30" TextAlignment="Center" Text="Logo"/>
+        </Grid>
+        <ScrollViewer Grid.Column="0" Grid.Row="1" HorizontalScrollBarVisibility="Auto" Background="{StaticResource PrimaryHueDarkBrush}">      
+            <StackPanel  Background="{StaticResource PrimaryHueDarkBrush}">
                 <ListView Foreground="White">
                     <ListViewItem Selected="Selected_DinnerRoom" >
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="RoomService" VerticalAlignment="Center" Margin="15 7" Height="40" Width="40"/>
-                            <TextBlock Text="Comedor" VerticalAlignment="Center" Margin="5" FontWeight="Bold"/>
+                            <TextBlock Text="Comedor" VerticalAlignment="Center" Margin="5" FontWeight="Bold" FontSize="15"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem>
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Motorcycle" VerticalAlignment="Center" Margin="15 7"  Height="40" Width="40"/>
-                            <TextBlock Text="Domicilio" VerticalAlignment="Center" Margin="5" FontWeight="Bold"/>
-                        </StackPanel>
+                            <TextBlock Text="Domicilio" VerticalAlignment="Center" Margin="5" FontWeight="Bold" FontSize="15"/>
+                        </StackPanel>   
                     </ListViewItem>
                     <ListViewItem>
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="FoodVariant" VerticalAlignment="Center" Margin="15 7"  Height="40" Width="40"/>
-                            <TextBlock Text="Rapida" VerticalAlignment="Center" Margin="5" FontWeight="Bold"/>
+                            <TextBlock Text="Rapida" VerticalAlignment="Center" Margin="5" FontWeight="Bold" FontSize="15"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem>
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Nutrition" VerticalAlignment="Center" Margin="15 7"  Height="40" Width="40"/>
-                            <TextBlock Text="Productos" VerticalAlignment="Center" Margin="5" FontWeight="Bold"/>
+                            <TextBlock Text="Productos" VerticalAlignment="Center" Margin="5" FontWeight="Bold" FontSize="15"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem>
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Money100" VerticalAlignment="Center" Margin="15 7"  Height="40" Width="40"/>
-                            <TextBlock Text="Ventas" VerticalAlignment="Center" Margin="5" FontWeight="Bold"/>
+                            <TextBlock Text="Ventas" VerticalAlignment="Center" Margin="5" FontWeight="Bold" FontSize="15"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem>
+                    <ListViewItem>  
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Settings" VerticalAlignment="Center" Margin="15 7"  Height="40" Width="40"/>
-                            <TextBlock Text="Admin" VerticalAlignment="Center" Margin="5" FontWeight="Bold"/>
+                            <TextBlock Text="Admin" VerticalAlignment="Center" Margin="5" FontWeight="Bold" FontSize="15"/>
                         </StackPanel>
                     </ListViewItem>
-                </ListView> 
-            </materialDesign:ColorZone>
-        </StackPanel>
-        <Grid Grid.Column="1">      
-            <StackPanel Grid.RowSpan="2">   
+                </ListView>
+            </StackPanel>                   
+        </ScrollViewer>      
+        <Grid Grid.Column="1"  Grid.RowSpan="2">          
+            <StackPanel>        
                 <Frame x:Name="Main" Source="WelcomeView.xaml" NavigationUIVisibility="Hidden"/>
             </StackPanel>
         </Grid>

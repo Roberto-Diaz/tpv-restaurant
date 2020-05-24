@@ -8,8 +8,8 @@
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="800"  
       Title="DinnerRoomView">
-
-    <Grid Background="White">
+    
+    <Grid Background="Yellow">
         <!--<Border  Height="150" Width="175" CornerRadius="10" Margin="5" VerticalAlignment="Top"  
                           BorderBrush="Green" BorderThickness="2" Background="LightGreen">
             <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Left">
@@ -28,7 +28,7 @@
 
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition Width="1.5*"/>    
             <ColumnDefinition Width="180"/>
         </Grid.ColumnDefinitions>
 

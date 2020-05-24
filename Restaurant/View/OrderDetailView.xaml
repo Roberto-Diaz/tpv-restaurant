@@ -1,0 +1,472 @@
+﻿<Window x:Class="Restaurant.View.OrderDetailView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Restaurant.View"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"            
+        Title="OrderDetailView" Height="525" Width="900" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid>  
+    <StackPanel Background="AntiqueWhite">
+        <GroupBox materialDesign:ColorZoneAssist.Mode="PrimaryDark" BorderThickness="0">
+            <GroupBox.Header>
+                    <Grid>
+                        <TextBlock Text="Detalle de producto" FontSize="20"  Foreground="White" FontFamily="Aharoni" HorizontalAlignment="Left"/>
+                        <Button Width="30" Height="30" materialDesign:ShadowAssist.ShadowDepth="Depth2" Padding="0" HorizontalAlignment="Right" Click="BtnClose" >
+                            <materialDesign:PackIcon Kind="WindowClose"/>
+                        </Button>           
+                    </Grid>
+                </GroupBox.Header>
+                
+            
+            
+            
+            
+            
+            <StackPanel Orientation="Vertical">
+                <!--<ScrollViewer>
+                    <StackPanel Orientation="Vertical">
+                            <ListBox x:Name="lstDetailOrderProduct">        
+                                    <ListBoxItem>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding Name}"></TextBlock>
+                                        </StackPanel>
+                                    </ListBoxItem>  
+                                    <ListBoxItem>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding Price}"></TextBlock>  
+                                        </StackPanel>
+                                    </ListBoxItem>
+                                </ListBox>
+                        </StackPanel>
+                </ScrollViewer>-->
+                    <!--<ListBox Name="lstDetailOrderProduct" HorizontalContentAlignment="Stretch">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="{Binding Name}" />
+                                    <TextBlock Text="{Binding Description}" />      
+                                    --><!--<ProgressBar Grid.Column="1" Minimum="0" Maximum="100" Value="{Binding Completion}" />--><!--
+                                </Grid> 
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>-->
+                                
+                    <!--<DataGrid  Height="120" x:Name="lstDetailOrderProduct" AlternatingRowBackground="WhiteSmoke" CanUserAddRows="False" AutoGenerateColumns="False" CanUserDeleteRows="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Nombre" Binding="{Binding Name}" IsReadOnly="False"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Precio" Binding="{Binding Price}" IsReadOnly="True"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Descripción" Binding="{Binding Description}" IsReadOnly="false"></DataGridTextColumn>
+                        </DataGrid.Columns> 
+                    </DataGrid>-->
+
+
+                    <!--<StackPanel>
+                        <ItemsControl x:Name="lstDetailOrderProduct">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="Nombre"></TextBlock>
+                                        <TextBox x:Name="txtName" Text="{Binding Name}"></TextBox>              
+                                    </StackPanel>   
+                                    
+                                    --><!--<Button  Margin="10" Width="130"  Height="110" Click="BtnAddOrderProduct" CommandParameter="{Binding Id}">
+                                        <StackPanel Orientation="Vertical">
+                                            <Viewbox>
+                                                <TextBlock x:Name="txtName" Text="{Binding Name}"/>
+                                            </Viewbox>
+                                            <StackPanel Orientation="Horizontal">
+                                                <materialDesign:PackIcon Kind="CurrencyUsd" HorizontalAlignment="Center" Height="25" Width="25"/>
+                                                <TextBlock x:Name="txtPrice" Text="{Binding Price}" Foreground="Yellow"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Button>--><!--
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </StackPanel>-->
+
+
+
+
+                    <!--<TextBox x:Name="txtName"/>-->
+                    <TextBlock x:Name="txtName" Text="{Binding Path=selectedItem.Name}" Height="30"/>
+                    <TextBlock x:Name="txtPrice" Text="{Binding Path=selectedItem.Price}" Height="30"/>
+                    <TextBox x:Name="txtDescription" Text="{Binding Path=selectedItem.Description}" Height="30"/>   
+                    <!--<TextBox Text="{Binding ElementName=txtName, Path=Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>-->
+
+            
+
+                    <!--<StackPanel>
+                        <ItemsControl ItemsSource="{Binding lstCategories, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Button Margin="10" Width="110"  Height="110"  Command="{Binding DataContext.showCommandProducts, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type ItemsControl}}}" CommandParameter="{Binding Id}">
+                                        <StackPanel Orientation="Vertical">
+                                            <Viewbox Stretch="Fill">
+                                                <Image Source="/Assets/coca.png"/>
+                                            </Viewbox>
+                                            <TextBlock TextAlignment="Center" Text="{Binding Name}" Foreground="{Binding Color}"  FontSize="17" FontFamily="Franklin Gothic Medium"/>
+                                        </StackPanel>
+                                    </Button>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                        </ItemsControl>
+                    </StackPanel>-->
+
+                    <!--<Grid>  
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="550"/>  
+                            <ColumnDefinition Width="120*"/>
+                        </Grid.ColumnDefinitions>   
+                            
+                        <StackPanel Grid.Column="0">-->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>      
+                        <Button Grid.Column="0" Grid.Row="0" Margin="3" Height="50" Command="{Binding addKeyboardCommand}" CommandParameter="1"
+                            BorderThickness="0" >                       
+                            <TextBlock Text="1" FontSize="30"/> 
+                        </Button>
+                        <Button Grid.Column="1" Grid.Row="0" Margin="3" Height="50" 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter="2" >
+                            <TextBlock Text="2" FontSize="30"/>
+                        </Button>
+                        <Button Grid.Column="2" Grid.Row="0" Margin="3" Height="50" 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter="3">
+                            <TextBlock Text="3" FontSize="30"/>
+                        </Button>
+                        <Button Grid.Column="3" Grid.Row="0" Margin="3" Height="50" 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter="4">
+                            <TextBlock Text="4" FontSize="30"/>
+                        </Button>
+                        <Button Grid.Column="4" Grid.Row="0" Margin="3" Height="50" 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter="5">
+                            <TextBlock Text="5" FontSize="30"/>
+                        </Button>
+                        <Button Grid.Column="5" Grid.Row="0" Margin="3" Height="50" 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter="6">
+                            <TextBlock Text="6" FontSize="30"/>
+                        </Button>
+
+                        <Button Grid.Column="6" Grid.Row="0" Margin="3" Height="50" 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter="7">
+                            <TextBlock Text="7" FontSize="30"/>
+                        </Button>
+
+                        <Button Grid.Column="7" Grid.Row="0" Margin="3" Height="50" 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter="8">
+                            <TextBlock Text="8" FontSize="30"/>
+                        </Button>
+
+                        <Button Grid.Column="8" Grid.Row="0" Margin="3" Height="50" 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter="9">
+                            <TextBlock Text="9" FontSize="30"/>
+                        </Button>   
+
+                        <Button Grid.Column="9" Grid.Row="0" Margin="3" Height="50" 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter="0">
+                            <TextBlock Text="0" FontSize="30"/> 
+                        </Button>
+                        <Button Grid.Column="0" Grid.Row="1" Margin="3" Height="50" 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter="Q">
+                            <TextBlock Text="Q" FontSize="30"/>
+                        </Button>
+                        <Button Grid.Column="1" Grid.Row="1" Margin="3" Height="50" 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter="W">
+                            <TextBlock Text="W" FontSize="30"/>     
+                        </Button>
+                        <Button Grid.Column="2" Grid.Row="1" Margin="3" Height="50" 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter="E">
+                            <TextBlock Text="E" FontSize="30"/>
+                        </Button>
+                        <Button Grid.Column="3" Grid.Row="1" Margin="3" Height="50" 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter="R">
+                            <TextBlock Text="R" FontSize="30"/> 
+                        </Button>
+                        <Button Grid.Column="4" Grid.Row="1" Margin="3" Height="50" 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter="T">
+                            <TextBlock Text="T" FontSize="30"/>
+                        </Button>
+                        <Button Grid.Column="5" Grid.Row="1" Margin="3" Height="50" 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter="Y">
+                            <TextBlock Text="Y" FontSize="30"/>
+                        </Button>
+
+                        <Button Grid.Column="6" Grid.Row="1" Margin="3" Height="50" 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter="U">
+                            <TextBlock Text="U" FontSize="30"/>
+                        </Button>
+
+                        <Button Grid.Column="7" Grid.Row="1" Margin="3" Height="50" 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter="I">
+                            <TextBlock Text="I" FontSize="30"/>
+                        </Button>
+
+                        <Button Grid.Column="8" Grid.Row="1" Margin="3" Height="50"         
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter="O">
+                            <TextBlock Text="O" FontSize="30"/>
+                        </Button>
+
+                        <Button Grid.Column="9" Grid.Row="1" Margin="3" Height="50"                                 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter="P">
+                            <TextBlock Text="P" FontSize="30"/>
+                        </Button>   
+
+                        <Button Grid.Column="0" Grid.Row="2" Margin="3" Height="50" 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter="A">
+                            <TextBlock Text="A" FontSize="30"/>
+                        </Button>
+                        <Button Grid.Column="1" Grid.Row="2" Margin="3" Height="50" 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter="S">
+                            <TextBlock Text="S" FontSize="30"/>
+                        </Button>
+                        <Button Grid.Column="2" Grid.Row="2" Margin="3" Height="50" 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter="D">
+                            <TextBlock Text="D" FontSize="30"/>
+                        </Button>
+                        <Button Grid.Column="3" Grid.Row="2" Margin="3" Height="50" 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter="F">
+                            <TextBlock Text="F" FontSize="30"/>
+                        </Button>
+                        <Button Grid.Column="4" Grid.Row="2" Margin="3" Height="50" 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter="G">
+                            <TextBlock Text="G" FontSize="30"/>
+                        </Button>
+                        <Button Grid.Column="5" Grid.Row="2" Margin="3" Height="50" 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter="H">
+                            <TextBlock Text="H" FontSize="30"/>
+                        </Button>
+                        <Button Grid.Column="6" Grid.Row="2" Margin="3" Height="50" 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter="J">
+                            <TextBlock Text="J" FontSize="30"/>
+                        </Button>
+                        <Button Grid.Column="7" Grid.Row="2" Margin="3" Height="50" 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter="K">
+                            <TextBlock Text="K" FontSize="30"/>
+                        </Button>
+                        <Button Grid.Column="8" Grid.Row="2" Margin="3" Height="50" 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter="L">
+                            <TextBlock Text="L" FontSize="30"/>
+                        </Button>
+                        <Button Grid.Column="9" Grid.Row="2" Margin="3" Height="50" 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter="Ñ">
+                            <TextBlock Text="Ñ" FontSize="30"/>
+                        </Button>
+                        <Button Grid.Column="0" Grid.Row="3" Margin="3" Height="50" 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter="Z">
+                            <TextBlock Text="Z" FontSize="30"/>
+                        </Button>
+
+                        <Button Grid.Column="1" Grid.Row="3" Margin="3" Height="50" 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter="X">
+                            <TextBlock Text="X" FontSize="30"/>
+                        </Button>
+
+                        <Button Grid.Column="2" Grid.Row="3" Margin="3" Height="50" 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter="C">
+                            <TextBlock Text="C" FontSize="30"/>
+                        </Button>
+
+                        <Button Grid.Column="3" Grid.Row="3" Margin="3" Height="50" 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter="V">
+                            <TextBlock Text="V" FontSize="30"/>
+                        </Button>
+
+                        <Button Grid.Column="4" Grid.Row="3" Margin="3" Height="50" 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter="B">
+                            <TextBlock Text="B" FontSize="30"/>
+                        </Button>
+
+                        <Button Grid.Column="5" Grid.Row="3" Margin="3" Height="50" 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter="N">
+                            <TextBlock Text="N" FontSize="30"/>
+                        </Button>
+
+                        <Button Grid.Column="6" Grid.Row="3" Margin="3" Height="50" 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter="M">
+                            <TextBlock Text="M" FontSize="30"/>
+                        </Button>
+
+                        <Button Grid.Column="7" Grid.Row="3" Margin="3" Height="50" 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter=",">
+                            <TextBlock Text="," FontSize="30"/>
+                        </Button>
+
+                        <Button Grid.Column="8" Grid.Row="3" Margin="3" Height="50" 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter=".">
+                            <TextBlock Text="." FontSize="30"/>
+                        </Button>
+                        <Button Grid.Column="9" Grid.Row="3" Margin="3" Height="50"                     
+                            BorderThickness="0"  Command="{Binding addKeyboardCommand}" CommandParameter="delete">                        
+                            <materialDesign:PackIcon Kind="BackspaceOutline" HorizontalAlignment="Center" Height="30" Width="30"/>
+                        </Button>
+                        <Button Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4" Margin="2"  Height="50" 
+                            BorderThickness="0" >
+                            <TextBlock Text="Mayúsculas" FontSize="20"/>
+                        </Button>
+                        <Button Grid.Column="2" Grid.ColumnSpan="5" Grid.Row="4" Margin="3" Height="50" 
+                             BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter=" ">   
+                        </Button>
+                        <Button Grid.Column="7" Grid.Row="4" Margin="3"  Height="50" 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter="@">
+                            <TextBlock Text="@" FontSize="30"/>
+                        </Button>
+                        <Button Grid.Column="8" Grid.ColumnSpan="2" Grid.Row="4" Margin="3"  Height="50" 
+                            BorderThickness="0">
+                            <materialDesign:PackIcon Kind="KeyboardReturn" HorizontalAlignment="Center" Height="30" Width="30"/>
+                        </Button>
+                        <Button Grid.Column="10" Grid.Row="0" Margin="3" Height="50" 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter="/">
+                            <TextBlock Text="/" FontSize="30"/>
+                        </Button>
+                        <Button Grid.Column="10" Grid.Row="1" Margin="3" Height="50" 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter="*">
+                            <TextBlock Text="*" FontSize="30"/>
+                        </Button>
+                        <Button Grid.Column="10" Grid.Row="2" Margin="3" Height="50" 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter="-">
+                            <TextBlock Text="-" FontSize="30"/>
+                        </Button>
+                        <Button Grid.Column="10" Grid.Row="3" Margin="3" Height="50" 
+                            BorderThickness="0" Command="{Binding addKeyboardCommand}" CommandParameter="+">
+                            <TextBlock Text="+" FontSize="30"/>
+                        </Button>
+                        <Button Grid.Column="10" Grid.Row="4" Margin="3" Height="50" 
+                            BorderThickness="0" >
+                            <materialDesign:PackIcon Kind="KeyboardOutline" HorizontalAlignment="Center" Height="30" Width="30"/>        
+                        </Button>
+                                
+                        <Button Grid.Column="7" Grid.ColumnSpan="2" Grid.Row="5" Click="BtnCancel" Margin="3" Height="50" > 
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Cancel" HorizontalAlignment="Left" Margin="3" Height="30" Width="30"/>
+                                <TextBlock HorizontalAlignment="Right" Text="Cancelar" Margin="10"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Grid.Column="9" Grid.ColumnSpan="2"  Grid.Row="5" Margin="3" Height="50" >
+                            <StackPanel Orientation="Horizontal">   
+                                <materialDesign:PackIcon Kind="ContentSave" HorizontalAlignment="Left" Margin="3" Height="30" Width="30"/>
+                                <TextBlock HorizontalAlignment="Right" Text="Guardar" Margin="10"/> 
+                            </StackPanel>
+                        </Button>
+                    </Grid>
+                        <!--</StackPanel>
+                        <StackPanel Grid.Column="1">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*"/>
+                                    <RowDefinition Height="1*"/>
+                                    <RowDefinition Height="1*"/>
+                                    <RowDefinition Height="1*"/>
+                                </Grid.RowDefinitions>
+        
+                                <Button Grid.Column="0" Grid.Row="0" Margin="3"
+                                 BorderThickness="0" >
+                                    /
+                                </Button>
+                                <Button Grid.Column="1" Grid.Row="0" Margin="3"
+                                 BorderThickness="0" Background="DarkOrange">
+                                    *
+                                </Button>
+                                <Button Grid.Column="2" Grid.Row="0" Margin="3"
+                                 BorderThickness="0" Background="DarkOrange">
+                                    -
+                                </Button>
+
+                                <Button Grid.Column="0" Grid.Row="1" Margin="3"
+                                 BorderThickness="0" Background="DarkOrange">
+                                    7
+                                </Button>
+                                <Button Grid.Column="1" Grid.Row="1" Margin="3"
+                                 BorderThickness="0" Background="DarkOrange">
+                                    8
+                                </Button>
+                                <Button Grid.Column="2" Grid.Row="1" Margin="3"
+                                 BorderThickness="0" Background="DarkOrange">
+                                    9
+                                </Button>
+
+                                <Button Grid.Column="0" Grid.Row="1" Margin="3"
+                                 BorderThickness="0" Background="DarkOrange">
+                                    4
+                                </Button>
+                                <Button Grid.Column="1" Grid.Row="1" Margin="3"
+                                 BorderThickness="0" Background="DarkOrange">
+                                    5
+                                </Button>
+                                <Button Grid.Column="2" Grid.Row="1" Margin="3"
+                                 BorderThickness="0" Background="DarkOrange">
+                                    6
+                                </Button>
+                                <Button Grid.Column="0" Grid.Row="2" Margin="3"
+                                 BorderThickness="0" Background="DarkOrange">
+                                    1
+                                </Button>
+                                <Button Grid.Column="1" Grid.Row="2" Margin="3"
+                                 BorderThickness="0" Background="DarkOrange">
+                                    2
+                                </Button>
+                                <Button Grid.Column="2" Grid.Row="2" Margin="3"
+                                 BorderThickness="0" Background="DarkOrange">
+                                    3
+                                </Button>
+                                <Button Grid.Column="0" Grid.Row="3" Margin="3"
+                                 BorderThickness="0" Background="DarkOrange">
+                                      <materialDesign:PackIcon Kind="KeyboardOutline" HorizontalAlignment="Center"/>        
+                                </Button>
+                                <Button Grid.Column="1" Grid.Row="3" Margin="3"
+                                 BorderThickness="0" Background="DarkOrange">
+                                    0
+                                </Button>
+                                <Button Grid.Column="2" Grid.Row="3" Margin="3"
+                                 BorderThickness="0" Background="DarkOrange">
+                                    +
+                                </Button>
+                            </Grid>
+                        </StackPanel>
+                    </Grid>-->
+            </StackPanel>
+        </GroupBox>
+    </StackPanel>
+</Grid>
+</Window>
+

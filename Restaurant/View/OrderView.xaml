@@ -1,0 +1,147 @@
+﻿<Page x:Class="Restaurant.View.OrderView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Restaurant.View"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      MinHeight="600" MinWidth="800"                    
+      Title="OrderView">
+    <!--d:DesignHeight="1400" d:DesignWidth="1080"-->   
+    <Grid>
+        <Grid.ColumnDefinitions>    
+            <ColumnDefinition Width="400"/>                         
+            <ColumnDefinition/>             
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="100"/>                       
+        </Grid.RowDefinitions>  
+        <StackPanel Grid.Column="0" Grid.RowSpan="2" Background="WhiteSmoke">
+            <DataGrid ItemsSource="{Binding lstOrderProduct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="true" AlternatingRowBackground="WhiteSmoke" CanUserAddRows="False" AutoGenerateColumns="False" CanUserDeleteRows="False" MouseDoubleClick="BtnMouseDoubleClick" >       
+                <DataGrid.Columns>                             
+                    <DataGridTextColumn Header="Nombre" Binding="{Binding Name}"></DataGridTextColumn>                                      
+                    <DataGridTextColumn Header="Precio" Binding="{Binding Price}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Cantidad" Binding="{Binding Quantity}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Descripción" Binding="{Binding Description}"></DataGridTextColumn>      
+                    <DataGridTemplateColumn Header="Eliminar">          
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>          
+                                <Button MinHeight="60" MinWidth="40" Command="{Binding DataContext.orderDetailCommand, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type DataGrid}}}" CommandParameter="{Binding Id}"> 
+                                    <StackPanel>            
+                                        <materialDesign:PackIcon Kind="Delete" HorizontalAlignment="Left"  Height="48" Width="48"/> 
+                                    </StackPanel>   
+                                </Button>           
+                            </DataTemplate>     
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns> 
+                <!--<dg:DataGridTemplateColumn Header="Delete">
+                    <dg:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Style="{DynamicResource GlassButton}" Background="{DynamicResource DeleteButton}">
+                            </Button>
+                        </DataTemplate>
+                    </dg:DataGridTemplateColumn.CellTemplate>-->
+                <!--<DataGridTemplateColumn>        
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>    
+                                <Button CommandParameter="{Binding Id}" >Eliminar</Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>-->        
+            </DataGrid>
+            
+        </StackPanel>   
+        <StackPanel Grid.Column="1" Grid.Row="0">
+            <ScrollViewer  HorizontalScrollBarVisibility="Visible">
+                <StackPanel>
+                    <ItemsControl ItemsSource="{Binding lstCategories, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">          
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>  
+                                <Button Margin="10" Width="110"  Height="110"  Command="{Binding DataContext.showCommandProducts, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type ItemsControl}}}" CommandParameter="{Binding Id}">
+                                    <StackPanel Orientation="Vertical">                 
+                                        <Viewbox Stretch="Fill">            
+                                            <Image Source="/Assets/coca.png"/>  
+                                        </Viewbox>  
+                                        <TextBlock TextAlignment="Center" Text="{Binding Name}" Foreground="{Binding Color}"  FontSize="17" FontFamily="Franklin Gothic Medium"/>
+                                    </StackPanel>
+                                </Button>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </StackPanel>
+            </ScrollViewer> 
+            
+            <ScrollViewer  HorizontalScrollBarVisibility="Visible"> 
+                <StackPanel>
+                    <ItemsControl x:Name="Products" ItemsSource="{Binding lstProducts, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">            
+                        <ItemsControl.ItemsPanel>   
+                            <ItemsPanelTemplate>    
+                                <WrapPanel/>
+                            </ItemsPanelTemplate>       
+                        </ItemsControl.ItemsPanel>
+
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                
+                                <!--<Border Background="Brown" BorderBrush="Black" BorderThickness="1" Margin="10" Padding="10">-->
+                                    <!--<Button  Margin="10" Width="110"  Height="110"  Command="{Binding DataContext.addCommandProduct, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type ItemsControl}}}" CommandParameter="{Binding Id}">
+                                    <StackPanel Orientation="Vertical">
+                                        <TextBlock Name="txtName" Text="{Binding Name}"/>  
+                                        <TextBlock Name="txtCost" Text="{Binding Cost}"/>       
+                                    </StackPanel>           
+                                </Button>-->        
+                                 <!--Click="BtnAddOrderProduct" -->
+                                
+                                <Button  Margin="10" Width="130"  Height="110" Click="BtnAddOrderProduct" CommandParameter="{Binding Id}">  
+                                    <StackPanel Orientation="Vertical">
+                                        <Viewbox>
+                                            <TextBlock x:Name="txtName" Text="{Binding Name}"/> 
+                                        </Viewbox>
+                                        <StackPanel Orientation="Horizontal">   
+                                            <materialDesign:PackIcon Kind="CurrencyUsd" HorizontalAlignment="Center" Height="25" Width="25"/>       
+                                            <TextBlock x:Name="txtPrice" Text="{Binding Price}" Foreground="Yellow"/>                                                                  
+                                        </StackPanel>
+                                    </StackPanel>       
+                                </Button>       
+                                <!--</Border>-->
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+            </ScrollViewer>
+            <ScrollViewer  HorizontalScrollBarVisibility="Visible">
+                <StackPanel>
+                    
+                </StackPanel>
+            </ScrollViewer>
+
+            <!--<ScrollViewer>
+                <StackPanel Orientation="Vertical">
+                    <ListBox  ItemsSource="{Binding lstProducts, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">    
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                    <TextBlock Text="{Binding Name}"></TextBlock>
+                                    <TextBlock Text="{Binding Cost}"></TextBlock>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </StackPanel>
+            </ScrollViewer>-->
+        </StackPanel>   
+        <StackPanel Grid.Row="1" Grid.Column="1" Background="WhiteSmoke">
+            <TextBlock x:Name="Mesa"/>
+            <TextBlock x:Name="User"/>
+        </StackPanel>       
+    </Grid>
+</Page>

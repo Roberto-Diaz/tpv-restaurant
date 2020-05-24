@@ -44,6 +44,19 @@ namespace Restaurant.Model
             }
         }
 
+        public string NameProduct
+        {
+            get {
+                return model.Products.Name != null ? model.Products.Name : "";  
+            }
+            set
+            {
+                if (model.Products.Name == value) return;
+                model.Products.Name = value;
+                OnPropertyChanged("NameProduct");           
+            }
+        }
+
         public int Quantity
         {
             get { return model.Quantity; }

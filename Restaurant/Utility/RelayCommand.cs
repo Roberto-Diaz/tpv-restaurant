@@ -60,12 +60,13 @@ namespace Restaurant.Utility
 
         public bool CanExecute(object parameter)
         {
-            return _canExecute(parameter);
+            //return _canExecute(parameter);
+            return _canExecute == null ? true : _canExecute.Invoke(parameter);  
         }   
 
         public void Execute(object parameter)
-        {
-            _execute(parameter);
+        {       
+            _execute.Invoke(parameter);
         }
     }
 }

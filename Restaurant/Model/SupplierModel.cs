@@ -29,7 +29,8 @@ namespace Restaurant.Model
             {
                 if (model.Name == value) return;
                 model.Name = value;
-                OnPropertyChanged("Name", "FullName");
+                OnPropertyChanged("Name");  
+                //OnPropertyChanged("Name", "FullName");    
             }
         }
 
@@ -45,7 +46,8 @@ namespace Restaurant.Model
             {
                 if (model.FirstSurname == value) return;
                 model.FirstSurname = value;
-                OnPropertyChanged("FirstSurname", "FullName");
+                //OnPropertyChanged("FirstSurname", "FullName");
+                OnPropertyChanged("FirstSurname");      
             }
         }
 
@@ -56,7 +58,8 @@ namespace Restaurant.Model
             {
                 if (model.SecondSurname == value) return;
                 model.SecondSurname = value;
-                OnPropertyChanged("SecondSurname", "FullName");
+                OnPropertyChanged("SecondSurname");
+                //OnPropertyChanged("SecondSurname", "FullName");   
             }
         }
         public string Phone

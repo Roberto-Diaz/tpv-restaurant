@@ -38,12 +38,18 @@ namespace Restaurant.View
         private void Btn_OpenTable(object sender, RoutedEventArgs e)
         {
             string nombre = ((Button)e.Source).Content.ToString();
-            int id = int.Parse(((Button)e.Source).Uid);     
+            int id = int.Parse(((Button)e.Source).Uid);
 
-            FormOrderView _formOrder = new FormOrderView();
-            _formOrder.Mesa.Text = id.ToString();
-            _formOrder.User.Text = LoginView.usuario;           
-            _formOrder.Show();  
+            OrderView _order = new OrderView();
+            _order.Mesa.Text = id.ToString();
+            _order.User.Text = LoginView.usuario;
+
+            MainWindow.StaticMainFrame.Content = _order;    
+
+            //FormOrderView _formOrder = new FormOrderView();
+            //_formOrder.Mesa.Text = id.ToString();
+            //_formOrder.User.Text = LoginView.usuario;           
+            //_formOrder.Show();  
         }
     }
 }

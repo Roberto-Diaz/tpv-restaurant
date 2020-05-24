@@ -76,10 +76,19 @@
     </ApplicationDefinition>
     <Compile Include="Model\AccountModel.cs" />
     <Compile Include="Model\AreasModel.cs" />
+    <Compile Include="Model\CategoryModel.cs" />
+    <Compile Include="Model\MeasureModel.cs" />
+    <Compile Include="Model\OrderModel.cs" />
+    <Compile Include="Model\OrderProductModel.cs" />
+    <Compile Include="Model\OrderTableModel.cs" />
+    <Compile Include="Model\ProductModel.cs" />
     <Compile Include="Model\TableModel.cs" />
+    <Compile Include="Model\TempOrderProducts.cs" />
+    <Compile Include="Model\TypeModel.cs" />
     <Compile Include="Utility\Helpers.cs" />
     <Compile Include="ViewModel\DinnerRoomViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\OrderViewModel.cs" />
     <Compile Include="ViewModel\SupplierViewModel.cs" />
     <Compile Include="View\AccountView.xaml.cs">
       <DependentUpon>AccountView.xaml</DependentUpon>
@@ -95,6 +104,12 @@
     </Compile>
     <Compile Include="View\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OrderDetailView.xaml.cs">
+      <DependentUpon>OrderDetailView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OrderView.xaml.cs">
+      <DependentUpon>OrderView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SupplierView.xaml.cs">
       <DependentUpon>SupplierView.xaml</DependentUpon>
@@ -220,6 +235,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\OrderDetailView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OrderView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\SupplierView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -267,6 +290,7 @@
   <ItemGroup />
   <ItemGroup>
     <Resource Include="Assets\mesa.jpg" />
+    <Resource Include="Assets\coca.png" />
     <Content Include="DB\DB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DB.edmx</DependentUpon>

@@ -7,8 +7,8 @@
         xmlns:local="clr-namespace:Restaurant.View"
         mc:Ignorable="d"
         Title="AccountView" Height="328" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">   
-    <Grid Background="White">
-        <StackPanel>
+    <Grid>
+        <StackPanel Background="AntiqueWhite">      
             <GroupBox materialDesign:ColorZoneAssist.Mode="PrimaryDark" BorderThickness="0">
                 <GroupBox.Header>   
                     <Label Foreground="White" FontSize="20" FontFamily="Aharoni">Registrar cuenta</Label>

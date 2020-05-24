@@ -24,7 +24,7 @@
         <EntityTypeShape EntityType="RestaurantTPVModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="RestaurantTPVModel.Tables" Width="1.5" PointX="5.25" PointY="7.875" IsExpanded="true" />
         <EntityTypeShape EntityType="RestaurantTPVModel.Tips" Width="1.5" PointX="7.5" PointY="22.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="RestaurantTPVModel.Types" Width="1.5" PointX="8.25" PointY="25.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestaurantTPVModel.Types" Width="1.5" PointX="10" PointY="25.125" IsExpanded="true" />
         <EntityTypeShape EntityType="RestaurantTPVModel.Users" Width="1.5" PointX="3" PointY="17.5" IsExpanded="true" />
         <AssociationConnector Association="RestaurantTPVModel.FK_Accounts_Boxes" ManuallyRouted="false" />
         <AssociationConnector Association="RestaurantTPVModel.FK_Accounts_Users" ManuallyRouted="false" />
